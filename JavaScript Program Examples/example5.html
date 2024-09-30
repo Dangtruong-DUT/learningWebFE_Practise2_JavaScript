@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example5</title>
+</head>
+<body>
+    <form action="" name="form1">
+        <select name="person" id="" onchange="displayPerson()">
+            <option value="Toan">Toan</option>
+            <option value="Truong">Truong</option>
+            <option value="Bao">Bao</option>
+            <option value="Tuan">Tuan</option>
+        </select>
+    </form>
+    <script>
+        function Person(Name, ID) {
+            this.Name= Name
+            this.ID = ID
+            this.toString = function() {
+               return `Name:${Name}, Identification: ${ID}`
+            }
+        }
+        var Students = [
+            new Person('Toan',1),
+            new Person('Truong',2),
+            new Person('Bao',3),
+            new Person('Tuan',4)
+
+        ]
+    function displayPerson() {
+        var namePerson = document.querySelector('select').value
+        Students.some(function (person) {
+            if (person.Name==namePerson) {
+                alert(person)
+                return true
+            } else 
+                return false
+        })
+    }
+    </script>
+</body>
+</html>

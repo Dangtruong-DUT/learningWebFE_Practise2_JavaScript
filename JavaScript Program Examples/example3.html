@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example3</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" name = 'form1'>
+            <input type="text" name ='factor1'>
+            <button type="button" value ='+'>+</button>
+            <button type="button" value ='-'>-</button>
+            <button type="button" value = '*' >x</button>
+            <button type="button" value = '/'>/</button>
+            <button type="button"value= '**'>^</button>
+            <input type="text"  name ='factor2'>
+            <span>=</span>
+            <input type="text"  name ='result' readonly>
+        </form>
+    </div>
+    <script>
+        var btnBieuThuc = document.querySelectorAll('button');
+        for (const element of btnBieuThuc) {
+            element.addEventListener('click',function(event) {
+                var bieuthuc = event.target.value
+                var factor1 = document.form1.factor1.value
+                var factor2 = document.form1.factor2.value
+                if ( factor1 && factor2) {
+                    document.form1.result.value = eval(factor1+bieuthuc+factor2)
+                }
+            })
+        }
+    </script>
+</body>
+</html>

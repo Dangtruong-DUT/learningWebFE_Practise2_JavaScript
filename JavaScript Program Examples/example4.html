@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example 4</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" name="form1">
+            <div class="inputcontainer">
+                <label for="">value:</label>
+                <input type="text" name="inputvalue">
+            </div>
+            <div>Action:</div>
+            <div class="inputcontainer">
+                <input type="radio" name="bieuthuc" value="*2" def="true">
+                <label for="">Double</label>
+            </div>
+            <div class="inputcontainer">
+                <input type="radio" name="bieuthuc" value ="**2">
+                <label for="">Square</label>
+            </div>
+            <div class="inputcontainer">
+                <label for="">result:</label>
+                <input type="text" name="inputResult">
+            </div>
+        </form>
+    </div>
+    <script>
+
+        var actions = document.form1.bieuthuc
+        actions.forEach(element => {
+            element. addEventListener('click', function (event) {
+            var action = event.target.value
+            var value = document.form1.inputvalue.value
+            if (value) {
+                document.form1.inputResult.value = eval(value+action)
+            }
+            
+        })
+        });
+    </script>
+</body>
+</html>

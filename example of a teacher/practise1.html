@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practise 1</title>
+    <script>
+        function toUppercase() {
+            var text = document.getElementById("txt1").value;
+            text = text.toUpperCase()
+            document.getElementById("txt2").value = text
+        }
+
+    </script>
+</head>
+
+<body>
+  
+        <form action="" class="practise1" name="form1">
+            <input type="text" id="txt1" onblur="toUppercase()" name="tex1">
+            <input type="text" id="txt2">
+        </form>
+</body>
+
+</html>

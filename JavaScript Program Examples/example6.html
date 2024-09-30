@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 6</title>
+</head>
+<body>
+    <div class="container">  
+        <form action="" name="form1">
+            <input type="text" name ='marquee' readonly style="width: 23rem " >
+        </form>
+    </div>
+    <script>
+       var arrayString = [
+        'Welcome to JavaScript',
+        'Chào mừng bạn đến với khoa công nghệ thông tin',
+        'Chào mừng bạn đến với đại học bách khoa-Đại học đà nẵng'
+       ]
+       var textMarquee = document.form1.marquee
+       
+        var displayText = function(string) {
+            var outputString = '_'
+            var length = string.length
+            var index = 0;
+            var interval =setInterval(function () {
+            if (index < length) {
+                outputString = outputString.replace('_',string[index++])
+                outputString+='_'
+                textMarquee.value= outputString
+
+            } else 
+            {
+                clearInterval(interval); 
+                setTimeout(function() { // Wait before starting the next
+                    outputString = '_';
+                    index = 0;
+                    displayText(arrayString[(arrayString.indexOf(string) + 1) % arrayString.length]);
+                }, 1000);
+            }
+          },150)
+        }
+        displayText(arrayString[0])
+
+    </script>
+</body>
+</html>

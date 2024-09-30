@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practise2</title>
+</head>
+<body>
+    <script>
+        function thongbao() {
+            document.form1.select1.selectedIndex =  document.form1.text1.value
+        }
+    </script>
+        <form action="" name ="form1">
+            <select name="select1" id="">
+                <option value="index0">index0</option>
+                <option value="index1">index1</option>
+                <option value="index2">index2</option>
+                <option value="index3">index2</option>
+            </select>
+            <input type="text" name= "text1">
+            <input type="button" value="OK" onclick="thongbao()">
+        </form>
+</body>
+</html>

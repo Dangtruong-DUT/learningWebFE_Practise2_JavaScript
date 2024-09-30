@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example 2</title>
+</head>
+<body>
+    <form action="" name="form1">
+        <div class="inputcontainer">
+            <label for="">Nhập Biểu Thức</label>
+            <input type="text" name="inputbieuthuc">
+        </div>
+        <div class="inputcontainer">
+            <label for="">Kết quả</label>
+            <input type="text" name="inputketqua" readonly>
+        </div>
+        <input type = "button" value ='Calculate' onclick="Calculate()">
+    </form>
+    <script>
+        function Calculate() {
+           var bieuThuc =  document.form1.inputbieuthuc.value
+           if (bieuThuc==="") return
+           bieuThuc= bieuThuc.replace('^','**')
+           var ketQua = eval(bieuThuc)
+           document.form1.inputketqua.value = ketQua
+        }
+    </script>
+</body>
+</html>

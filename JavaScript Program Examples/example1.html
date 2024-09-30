@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example 1</title>
+</head>
+
+<body>
+    <form action="">
+        <div class="nameUser">Chào bạn: <b id="name"></b></div>
+        <div class="ageUser">Tuổi của bạn là: <u id="age"></u></div>
+        <input type="button" value="welcome" onclick="welcomeUser()">
+    </form>
+    <script>
+        var nameUser = prompt("mời bạn nhập tên mình:")
+        var ageUser = prompt("mời bạn nahpj tuổi mình")
+        document.getElementById("name").innerHTML = nameUser;
+        document.getElementById("age").innerHTML = ageUser;
+        function welcomeUser() {
+            alert("welcome to javaScript")
+        }
+    </script>
+</body>
+
+</html>
