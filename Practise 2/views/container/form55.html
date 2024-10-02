@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form55</title>
+</head>
+<body style="display: flex;align-items: center; justify-content: center;">
+        <form action="" name ="form1">
+            <select name="select1" id="">
+                <option value="0">index0</option>
+                <option value="1">index1</option>
+                <option value="2">index2</option>
+                <option value="3">index3</option>
+            </select>
+            <input type="text" name= "text1">
+            <input type="button" value="OK" name ='btnDisplayIndex'>
+        </form>
+        <script>
+            document.form1.btnDisplayIndex.onclick = function () {
+                document.form1.text1.value = document.form1.select1.value
+            }
+        </script>
+</body>
+</html>

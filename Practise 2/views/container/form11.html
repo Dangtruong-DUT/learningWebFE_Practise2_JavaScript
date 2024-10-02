@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>form11</title>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../../assest/css/normalize_css.css">
+        <link rel="stylesheet" href="../../assest/css/base.css">
+        <link rel="stylesheet" href="../../assest/css/main.css">
+        <link rel="stylesheet" href="../../assest/css/form1.css">
+        <link rel="stylesheet" href="../../assest/fonts/fontawesome-6.6.0/fontawesome-free-6.6.0-web/css/all.min.css">
+    </head>
+    
+    <body>
+        <div class="grid">
+            <div class="form-container">
+                <form action="#" class= "form" id = "form-1">
+                    <h2>Đăng Ký Thành viên</h3>
+                    <p class="desc">Cùng nhau lập trình! </p>
+
+                    <div class="spacer"></div>
+
+                    <div class="form-group">
+                        <lable class="form-lable" for ='fullname'>Tên đầy đủ<span class="required">*</span></lable>
+                        <input type="text" name ='fullname' id="fullname" placeholder="VD: Đăng Trường" class ='form-control'>
+                        <span class="form-message"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <lable class="form-lable">Tỉnh/TP<span class="required">*</span></lable>
+                        <select  name="province" id="province"  class ='form-control'>
+                            <option value="">---Chọn Tỉnh/TP-</option>
+                            <option value="Hà Nội">Hà Nội</option>
+                            <option value="Đà Nẵng">Đà Nẵng</option>
+                            <option value="HCM">TP.HCM</option>
+                        </select>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <lable class="form-lable" for ='avatar'>Ảnh đại diện<span class="required">*</span></lable>
+                        <input type="file"  id ='avatar' name = 'avatar' class ='form-control'>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <lable class="form-lable" for ='email'>Email</lable>
+                        <input type="text"  id ='email' name = 'email' placeholder="VD: email@domain.com" class ='form-control'>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <lable class="form-lable" for ='password'>Mật khẩu<span class="required">*</span></lable>
+                        <input type="password"id= 'password' name = 'password' placeholder="Nhập mật khẩu" class ='form-control'>
+                        <span class="form-message" ></span>
+                    </div>
+
+                    <div class="form-group">
+                        <lable class="form-lable">Nhập lại mật khẩu<span class="required">*</span></lable>
+                        <input type="password" name="verifypassword" id="verifypassword" placeholder="Nhập lại mật khẩu" class ='form-control'>
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <lable class="form-lable">Giới tính<span class="required">*</span></lable>
+                        <div class="form-group__radios">
+                            <input type="radio" name="gender"  value ='female'>
+                            <span class="form-lable">Female</span>
+                        </div>
+                        <div class="form-group__radios">
+                            <input type="radio" name="gender"  value ='male'>
+                            <span class="form-lable">Male</span>
+                        </div>
+                        <div class="form-group__radios">
+                            <input type="radio" name="gender"  value ='orther'>
+                            <span class="form-lable">Orther</span>
+                        </div>
+                        <span class="form-message"></span>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <lable class="form-lable"></lable>
+                        <div class="form-group__radios">
+                            <input type="checkbox" name="policy1"  value ='dieu khoan'>
+                            <span class="form-lable"><a href="">Đồng ý với điều khoản của chúng tôi</a></span>
+                        </div>
+                        <div class="form-group__radios">
+                            <input type="checkbox" name="policy2"  value ='thong bao'>
+                            <span class="form-lable"><a href="">Nhận thông báo mới nhất từ chúng tôi</a></span>
+                        </div>
+                        <span class="form-message"></span>
+                    </div>
+                    <input type ="submit" class="form-submit btn btn--normal" value ='Đăng Ký'>
+
+
+                </form>
+            </div>
+            
+        </div>
+        <script src ="/validator.js"> </script>
+        <script>
+            Validator ({
+                form: '#form-1',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                    Validator.isRequired('#fullname'),
+                    Validator.isRequired('#avatar'),
+                    Validator.isEmail('#email'),
+                    Validator.isRequired('#password'),
+                    Validator.isRequired('#province'),
+                    Validator.minLegth('#password',6),
+                    Validator.isRequired('input[name="gender"]','Vui lòng chọn giới tính của bạn'),
+                    Validator.isRequired('input[name="policy1"]','Vui lòng chọn chọn đồng ý điều khoản!'),
+                    Validator.isRequired('#verifypassword'),
+                    Validator.isConfirmed('#verifypassword',function () {
+                        return document.querySelector('#form-1 #password').value
+                    },'Mật khẩu không trùng khớp'),
+                ],
+                onSubmit: function (data) {
+                    // code API
+                    alert(data.fullname+', Chúc mừng Bạn đã đăng ký thành công!')
+                    console.log(' Chúc mừng Bạn đã đăng ký thành công!',data)
+                }
+            })
+        </script>
+    </body>
+</html>
